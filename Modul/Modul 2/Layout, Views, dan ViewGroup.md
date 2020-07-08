@@ -56,6 +56,55 @@ Selain atribut-atribut tersebut, masih banyak lagi atribut-atribut lain dengan k
 
 ## ViewGroup
 
+ViewGroup adalah View spesial yang bisa mengandung View lain (disebut dengan children). `ViewGroup` merupakan base class untuk layout dan View container. Android memiliki beberapa ViewGroup yang sering digunakan seperti :
+
+### Linear Layout
+
+![linear layout](img/linear-layout.png)
+
+Layout yang mengatur View lain secara horizontal di satu kolom atau vertikal di satu baris. Dibawah ini adalah contoh dari penggunaan Linear Layout :
+
+```
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:orientation="horizontal">   <!-- Include other widget or layout tags here. These are considered
+"child views" or "children" of the linear layout --> </LinearLayout>
+```
+
+Kita bisa mengatur di `android:orientation` apakah children nya ditampilkan secara vertikal atau horizontal
+
+### Relative Layout
+
+RelativeLayout adalah ViewGroup yang menampilkan children dengan posisi relatif. Posisi dari setiap View dapat diatur relatif terhadap sibling element nya (Seperti di left-of atau below View lain) atau di posisi relatif terhadap parent (align ke bottom, left, maupun center).
+
+![relative layout](img/relative-layout.png)
+
+### Frame Layout
+
+FrameLayout didesain untuk memblok area di layar agar menampilkan suatu item.  View dari child ditaruh seperti stack, dimana child paling baru ditaruh paling atas.
+
+![frame layout](img/frame-layout.jpeg)
+
+### ScrollView
+
+ViewGroup yang membuat child didalamnya diatur dengan hierarki agar bisa di scroll. ScrollView hanya bisa digunakan untuk direct child. Jika ingin menggunakan banyak View, Maka gunakan ViewGroup lain. `ScrollView` hanya mendukung scroll dengan arah vertikal, jika ingin menggunakan scroll secara horizontal, gunakan `HorizontalScrollView`. Berikut adalah contoh kode untuk ScrollView :
+
+```
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    
+    <!-- everything you already have -->
+    
+</ScrollView>
+```
+![scroll view](img/scroll-view.png)
+
+## Penutup
+
+Selain View yang sudah disediakan oleh Android secara default, Anda bisa membuat View Anda secara custom seperti yang dicontohkan [disini](https://developer.android.com/guide/topics/ui/custom-components)
 
 ## Sumber :
 
