@@ -20,6 +20,26 @@ Kita pasti sudah mengenal apa itu Android, setiap hari pasti ada teman kita, kel
 
 Android Studio merupakan salah satu IDE yang paling umum digunakan untuk pengembangan aplikasi Android. Android Studio memiliki sangat banyak fitur yang sangat memudahkan pengembangan aplikasi Android. Langkah-langkah agar bisa mengistall dan menggunakan Android Studio bisa dilihat pada [link ini](https://developer.android.com/studio/install), kami tidak menjabarkan disini karena disana Anda lebih bisa menyesuaikan sesuai OS Anda sendiri. Lalu untuk pengenalan tools apa saja yang terdapat di Android Studio bisa dilihat pada [link ini](https://developer.android.com/studio/intro).
 
+## Struktur File di Android Studio
+
+![file structure](img/file-structure.png)
+
+### Manifest Folder
+
+Disini adalah tempat dimana file manifest ditempatkan. File manifest adalah file yang mengadung parameter konfigurasi dari project seperti permissions, services, dan library tambahan. File ini akan digenerate otomatis oleh sistem ketika Anda pertama kali membuat project. Sebuah aplikasi sendiri bisa memiliki banyak file manifest karena versioning aplikasi, untuk mendukung versi hardware yang spesifik.
+
+### Java Folder
+
+Folder ini adalah tempat dimana Anda akan menyimpan semua source code aplikasi Anda. Kalaupun Anda menulis program Anda dalam bahasa Kotlin, nama dari folder ini tetap tidak berubah.
+
+### Res Folder
+
+Folder ini berguna untuk memisahkan dan mengatur resource untuk aplikasi Anda. Setiap tipe file harus dimasukkan ke folder yang sesuai dengan standar pengembangan Android. Saat pertama kali project terbentuk, beberapa folder akan otomatis tersedia, walaupun folder-folder tersebut bukan hanya yang bisa kamu gunakan dalam project.
+
+### Gradle Scripts
+
+File APK sendiri akan dibangun dengan gradle build system, dimana system ini terintegrasi dengan Android Studio. Ketika membuat project, gradle build akan otomatis dibuatkan. Jika kamu memiliki kebutuhan spesial untuk project-mu, maka kamu bisa menspesifikan disini. 
+
 ## XML
 
 ![xml](img/xml.jpg)
@@ -73,3 +93,4 @@ Sebenarnya, selain digunakan untuk Android, XML sendiri juga banyak digunakan un
 - https://developer.android.com/studio/intro 
 - https://www.xml.com/pub/a/98/10/guide0.html#AEN63
 - https://developer.android.com/guide/topics/ui/declaring-layout
+- https://www.brainbell.com/android/file-folder-structure.html
