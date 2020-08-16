@@ -12,7 +12,7 @@ Konsep OOP sendiri sangat banyak digunakan di berbagai bahasa, bahkan bahasa yan
 Class dan Object merupakan konsep dasar dari OOP yang berkutat dengan entitas di dunia nyata. 
 
 ### Class
-Kelas secara singkat merupakan blueprint atau prototype untuk pembuatan object. Di dalam kelas, Anda harus mendeklarasikan atribut dan fungsi apa saja yang dibutuhkan oleh objek yang akan dibuat dari kelas itu nanti. Contoh pembuatan class :
+Kelas secara singkat merupakan blueprint atau prototype untuk pembuatan object. Di dalam class, Anda harus mendeklarasikan atribut dan fungsi apa saja yang dibutuhkan oleh objek yang akan dibuat dari class itu nanti. Contoh pembuatan class :
 
 ```
 // Contoh dalam Java
@@ -133,7 +133,54 @@ class Student {
 
 Kalian bisa mencoba di fungsi main untuk mendapat langsung data. Untuk bahasa Java kalian pasti akan mendapat error jika tidak melewati getter. Untuk Kotlin karena getter memanglah public maka bisa menggunakan cara seperti biasa. Untuk mengubah nilai suatu data maka perlu melewati setter dan tidak bisa langsung mengubah nilai di kedua bahasa tersebut.
 
+## Inheritance
+Inheritance adalah mekanisme dimana suatu class dapat mewarisi feature(data dan fungsi) dari class lain. Ada beberapa terminologi penting untuk Inheritance diantaranya :
+- Super Class : Class dimana feature dari class tersebut diwarisi oleh class lain
+- Sub Class : Class yang mewarisi feature dari class lain. Sub Class sendiri bisa menambah feature-nya sendiri.
+- Reusability : Jika kita ingin membuat sebuah class, dan ternyata sudah ada sebuah class yang sudah memiliki beberapa data yang kita mau, maka kita bisa menurunkan class tersebut ke class yang sedang kita buat. Dengan begini, kita akan menggunakan kembali feature dari class lain.
 
+Sedikit ilustrasi bagaimana Inheritance terjadi :
+
+![inheritance](img/oop5.jpg)
+
+Contoh Inheritance dalam pemrograman :
+```
+// Contoh dalam Java
+class Student2 {
+    String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+}
+
+class InternationalStudent extends Student2 {
+    String nationality;
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+}
+```
+
+```
+// Contoh dalam bahasa Kotlin
+open class Student {
+    lateinit var name: String
+}
+
+class InternationalStudent : Student() {
+    lateinit var nationality: String
+}
+```
 
 ## Sumber :
 - https://www.updateilmu.com/wp-content/uploads/2015/01/oop.jpg
@@ -142,3 +189,4 @@ Kalian bisa mencoba di fungsi main untuk mendapat langsung data. Untuk bahasa Ja
 - https://www.tutorialspoint.com/java/java_encapsulation.htm
 - https://www.geeksforgeeks.org/access-modifiers-java/
 - https://kotlinlang.org/docs/tutorials/kotlin-for-py/inheritance.html
+- https://www.geeksforgeeks.org/inheritance-in-java/
