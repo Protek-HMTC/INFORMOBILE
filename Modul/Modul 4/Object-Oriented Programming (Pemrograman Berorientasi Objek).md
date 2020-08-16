@@ -93,7 +93,52 @@ fun main() {
 }
 ```
 
+## Encapsulation
+Encapsulation adalah mekanisme dalam membungkus data (atribut) dan kode yang menggunakan data (fungsi) bersama dalam satu unit. Di dalam encapsulation, atribut dalam suatu class anak disembunyikan dari class lain dan hanya bisa diakses oleh fungsi dalam class tersebut.
+
+Agar dapat menerapkan encapsulation, maka perlu mengerti apa itu access modifier. Access modifier sendiri membantu dalam pembatasan aksesbilitas dari suatu data. Di bawah ini ada beberapa macam access modifier dan aksesbilitas dari masing-masing access modifier:
+
+![macam-macam access modifier](img/oop4.png)
+
+Berdasarkan tabel tersebut, agar bisa menerapkan encapsulation maka diperlukan access modifier private. Lalu terdapat konsep fungsi getter dan setter. Getter sendiri merupakan fungsi untuk mendapat nilai dari data yang diinginkan. Setter adalah fungsi yang digunakan untuk mengubah nilai suatu data. Dalam kotlin, getter dan setter sudah otomatis dibuat oleh sistem.
+
+Contoh penerapan encapsulation :
+
+```
+// Contoh dalam Java
+public class Student2 {
+    private int rollNo;
+
+    public void setRollNo(int rollNo) {
+        this.rollNo = rollNo;
+    }
+
+    public int getRollNo() {
+        return this.rollNo;
+    }
+}
+```
+
+```
+// Contoh dalam Kotlin
+class Student {
+    var rollNo: Int = 0
+        private set
+
+    fun setValRollNo(rollNo: Int) {
+        this.rollNo = rollNo
+    }
+}
+```
+
+Kalian bisa mencoba di fungsi main untuk mendapat langsung data. Untuk bahasa Java kalian pasti akan mendapat error jika tidak melewati getter. Untuk Kotlin karena getter memanglah public maka bisa menggunakan cara seperti biasa. Untuk mengubah nilai suatu data maka perlu melewati setter dan tidak bisa langsung mengubah nilai di kedua bahasa tersebut.
+
+
+
 ## Sumber :
 - https://www.updateilmu.com/wp-content/uploads/2015/01/oop.jpg
 - https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/
 - https://www.geeksforgeeks.org/classes-objects-java/
+- https://www.tutorialspoint.com/java/java_encapsulation.htm
+- https://www.geeksforgeeks.org/access-modifiers-java/
+- https://kotlinlang.org/docs/tutorials/kotlin-for-py/inheritance.html
