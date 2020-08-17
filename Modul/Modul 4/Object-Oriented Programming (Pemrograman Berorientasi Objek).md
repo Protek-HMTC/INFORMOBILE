@@ -418,6 +418,28 @@ class InternationalStudent : Student {
 ## Beberapa Konsep Tambahan
 
 ### DRY (Don't Repeat Yourself)
+Prinsip DRY berbunyi :
+
+`Every piece of knowledge or logic must have a single, unambiguous representation within a system`
+
+Dalam OOP, ini berarti penggunaan abstraction dengan baik. Jika ada fungsionalitas yang sama diantara class, maka bisa dibuat abstract class sebagai parent class-class itu atau menggunakan interface untuk merangkaikan fungsi-fungsi mereka.
+
+### KISS (Keep It Simple and Stupid)
+Prinsip Keep It Simple and Stupid adalah pengingat untuk menjaga agar kode Anda tetap sederhana dan mudah dibaca oleh manusia. Jika fungsi Anda menangani beberapa use-cases, bagi mereka ke dalam fungsi-fungsi yang lebih kecil. Jika fungsi itu melakukan beberapa fungsionalitas, maka buat beberapa fungsi untuk masing-masing fungsionalitas.
+
+### SRP (Single Responsibility Principle)
+Prinsip Single Responsibility Principle mengatakan bahwa tidak boleh ada dua atau lebih fungsionalitas di dalam satu class. Bunyinya :
+
+`A class should only have one, and only one, reason to be changed.`
+
+Dimana maksud dari `reason to be changed` adalah tanggung jawab dari class. Jika terdapat lebih dari satu tanggung jawab, maka ada lebih banyak alasan untuk mengganti class tersebut di suatu waktu.
+
+Ini berarti jika suatu saat fungsionalitas butuh update, maka tidak ada fungsionalitas lain yang terpengaruh.
+
+### Open/Closed Principle
+Prinsip Open/Closed Principle berbunyi bahwa suatu class atau object dan fungsi harus terbuka untuk ekstensi dan tertutup untuk modifikasi.
+
+Maksudnya adalah Anda harus mendesain class dan module Anda dengan kemungkinan update di masa depan, jadi mereka harusnya memiliki desain yang umum dimana Anda tidak perlu memodifikasi class tersebut untuk memperluas behavior-nya. 
 
 ## Sumber :
 - https://www.updateilmu.com/wp-content/uploads/2015/01/oop.jpg
@@ -432,3 +454,5 @@ class InternationalStudent : Student {
 - https://www.tutorialkart.com/kotlin/kotlin-abstraction/
 - https://www.geeksforgeeks.org/abstraction-in-java-2/
 - https://kotlinlang.org/docs/reference/interfaces.html
+- https://kotlinlang.org/docs/reference/classes.html
+- https://stackabuse.com/object-oriented-design-principles-in-java/
