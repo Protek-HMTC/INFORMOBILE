@@ -219,6 +219,8 @@ class InternationalStudent : Student() {
 }
 ```
 
+Di contoh tersebut menggambarkan bahwa class International Student merupakan Sub Class dan class Student merupakan Super Class. Maka class InternationalStudent akan mendapat feature dari class Student.
+
 ## Polymorphism
 Plymorphism berarti memiliki banyak bentuk. Polymorphism memungkinkan kita untuk melakukan satu aksi dengan cara yang berbeda-beda. Polymorphism bisa dilakukan dengan overloading dan overriding.
 
