@@ -93,6 +93,43 @@ fun main() {
 }
 ```
 
+### Constructor
+Constructor merupakan fungsi spesial yang digunakan untuk menginisialisasi suatu object. Constructor dipanggil saat sebuah object dibuat dari sebuah class. Constructor bisa dipakai untuk inisialisasi nilai awal dari atribut suatu object.
+
+Contoh :
+```
+// Contoh dalam bahasa Java
+class Student {
+    String name;
+
+    public Student(String name) {
+        this.name = name;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student("Jack");
+    }
+}
+```
+
+```
+//Contoh dalam bahasa Kotlin
+// Di Kotlin constructor ditulis disamping nama class
+class Student(val name: String) {
+    fun introduce() {
+        println(name)
+    }
+}
+
+fun main() {
+    val student = Student("jack")
+
+    student.introduce()
+}
+```
+
 ## Encapsulation
 Encapsulation adalah mekanisme dalam membungkus data (atribut) dan kode yang menggunakan data (fungsi) bersama dalam satu unit. Di dalam encapsulation, atribut dalam suatu class anak disembunyikan dari class lain dan hanya bisa diakses oleh fungsi dalam class tersebut.
 
@@ -380,6 +417,8 @@ class InternationalStudent : Student {
 
 ## Beberapa Konsep Tambahan
 
+### DRY (Don't Repeat Yourself)
+
 ## Sumber :
 - https://www.updateilmu.com/wp-content/uploads/2015/01/oop.jpg
 - https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/
@@ -392,3 +431,4 @@ class InternationalStudent : Student {
 - https://www.geeksforgeeks.org/interfaces-in-java/
 - https://www.tutorialkart.com/kotlin/kotlin-abstraction/
 - https://www.geeksforgeeks.org/abstraction-in-java-2/
+- https://kotlinlang.org/docs/reference/interfaces.html
