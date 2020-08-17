@@ -257,7 +257,128 @@ class InternationalStudent : Student() {
 }
 ```
 
+## Abstraction
+Abstraction bisa diartikan sebagai proses untuk menuliskan hanya karakteristik yang penting dari sebuah object tanpa menuliskan detail-nya. Feature dari object itu membedakan object itu dengan object lain yang memiliki tipe sama dan juga abstraction membantu untuk mengklasifikasi/mengelompokkan object. Abstraction bisa diperoleh dengan memanfaatkan Abstract Class dan Interface.
 
+### Abstract Class
+Beberapa karakteristik dari Abstract Class :
+- Abstract class didefinisikan dengan keyword `abstract`
+- Fungsi Abstract adalah fungsi yang dideklarasi tanpa implementasi-nya
+- Fungsi yang dideklarasi di abstract class tidak selalu harus merupakan abstract function. Abstract class bisa memiliki fungsi yang memiliki implementasi yang konkrit
+- Fungsi yang didefinisikan sebagai abstract harus didefinisikan kembali di Sub Class dengan menggunakan overriding.
+- Class yang memiliki satu atau lebih fungsi abstract harus dideklarasikan sebagai abstract class
+- Tidak ada object yang bisa dibuat dari abstract class. Harus melalui inheritance dahulu
+- Abstract class bisa memiliki constructor yang berparameter.
+
+Contoh penggunaan abstract class:
+
+```
+// Contoh dalam Java
+abstract class Student2 {
+    String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    // Abstract function
+    public abstract void introduce();
+}
+
+class InternationalStudent2 extends Student2 {
+    String nationality;
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    // Abstract function dioverride di Sub Class
+    @Override
+    public void introduce() {
+        System.out.println("My name is " + name + " and I'm from " + nationality);
+    }
+}
+```
+
+```
+// Contoh dalam Kotlin
+abstract class Student {
+    lateinit var name: String
+    
+    // abstract function
+    abstract fun introduce()
+}
+
+class InternationalStudent : Student() {
+    lateinit var nationality: String
+
+    // override abstract function
+    override fun introduce() {
+        println("My name is " + name + " And I'm from " + nationality)
+    }
+}
+```
+
+### Interface
+Interface mirip seperti abstract class, yang membedakan adalah fungsi yang dideklarasi di interface secara default adalah abstract function. Beberapa karakteristik dari interface :
+
+- Interface menspesifikan apa yang harus class lakukan dan bukan bagaimana. Bisa dibilang interface adalah blueprint dari class
+- Interface menspesifikan satu atau lebih fungsi abstact yang harus diimplemetasi oleh class.
+- Jika sebuah class mengimplementasi interface dan tidak menyediakan function body untuk semua fungsi yang dideklarasi di interface, maka class tersebut haruslah abstract class
+
+Contoh dari penggunaan interface :
+```
+// Contoh dalam Java
+interface Student2 {
+    String name = null;
+
+    void introduce();
+}
+
+class InternationalStudent2 implements Student2 {
+    String nationality;
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void introduce() {
+        System.out.println("My name is " + name + " and I'm from " + nationality);
+    }
+}
+```
+
+```
+// Contoh dalam Kotlin
+interface Student {
+    var name: String
+
+    fun introduce()
+}
+
+class InternationalStudent : Student {
+    lateinit var nationality: String
+
+    // override obstract function
+    override fun introduce() {
+        println("My name is " + name + " And I'm from " + nationality)
+    }
+}
+```
+
+## Beberapa Konsep Tambahan
 
 ## Sumber :
 - https://www.updateilmu.com/wp-content/uploads/2015/01/oop.jpg
@@ -268,3 +389,6 @@ class InternationalStudent : Student() {
 - https://kotlinlang.org/docs/tutorials/kotlin-for-py/inheritance.html
 - https://www.geeksforgeeks.org/inheritance-in-java/
 - https://www.geeksforgeeks.org/polymorphism-in-java/
+- https://www.geeksforgeeks.org/interfaces-in-java/
+- https://www.tutorialkart.com/kotlin/kotlin-abstraction/
+- https://www.geeksforgeeks.org/abstraction-in-java-2/
