@@ -182,6 +182,83 @@ class InternationalStudent : Student() {
 }
 ```
 
+## Polymorphism
+Plymorphism berarti memiliki banyak bentuk. Polymorphism memungkinkan kita untuk melakukan satu aksi dengan cara yang berbeda-beda. Polymorphism bisa dilakukan dengan overloading dan overriding.
+
+![overriding dan overloading](img/oop6.png)
+
+### Overloading
+Overloading terjadi ketika ada beberapa fungsi dengan nama yang sama tetapi memiliki parameter yang berbeda. Overloading bisa dilakukan ke suatu fungsi dengan pembedaan dari jumlah argumen atau jenis argumen. Contoh dari overloading :
+
+```
+// Contoh dalam Java
+class Student2 {
+    public void introduce(int rollNo) {
+        System.out.println("My Roll No is " + rollNo);
+    }
+
+    public void introduce(String name) {
+        System.out.println("My name is " + name);
+    }
+}
+```
+
+```
+// Contoh dalam Kotlin
+class Student {
+    fun introduce(rollNo: int) {
+        println("My Roll No is " + rollNo)
+    }
+
+    fun introduce(name: String) {
+        println("My name is " + name)
+    }
+}
+```
+
+### Overriding
+Overriding terjadi jika suatu class turunan memiliki definisi berbeda untuk salah satu anggota dari Super Class nya. Contoh untuk overriding :
+
+```
+// Contoh dalam Java
+class Student2 {
+    String name;
+
+    public void introduce() {
+        System.out.println("My name is " + name);
+    }
+}
+
+class InternationalStudent2 extends Student2 {
+    String nationality;
+    
+    public void introduce() {
+        System.out.println("My name is " + name + " and I'm from " + nationality);
+    }
+}
+```
+
+```
+// Contoh dalam Kotlin
+open class Student {
+    lateinit var name: String
+
+    fun introduce() {
+        println("My name is " + name)
+    }
+}
+
+class InternationalStudent : Student() {
+    lateinit var nationality: String
+    
+    fun introduce() {
+        println("My name is " + name + " And I'm from " + nationality)
+    }
+}
+```
+
+
+
 ## Sumber :
 - https://www.updateilmu.com/wp-content/uploads/2015/01/oop.jpg
 - https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/
@@ -190,3 +267,4 @@ class InternationalStudent : Student() {
 - https://www.geeksforgeeks.org/access-modifiers-java/
 - https://kotlinlang.org/docs/tutorials/kotlin-for-py/inheritance.html
 - https://www.geeksforgeeks.org/inheritance-in-java/
+- https://www.geeksforgeeks.org/polymorphism-in-java/
