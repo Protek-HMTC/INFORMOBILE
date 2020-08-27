@@ -64,7 +64,7 @@ ViewGroup adalah View spesial yang bisa mengandung View lain (disebut dengan chi
 
 Layout yang mengatur View lain secara horizontal di satu kolom atau vertikal di satu baris. Dibawah ini adalah contoh dari penggunaan Linear Layout :
 
-```
+```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
    android:layout_width="match_parent"
    android:layout_height="match_parent"
@@ -90,7 +90,7 @@ FrameLayout didesain untuk memblok area di layar agar menampilkan suatu item.  V
 
 ViewGroup yang membuat child didalamnya diatur dengan hierarki agar bisa di scroll. ScrollView hanya bisa digunakan untuk direct child. Jika ingin menggunakan banyak View, Maka gunakan ViewGroup lain. `ScrollView` hanya mendukung scroll dengan arah vertikal, jika ingin menggunakan scroll secara horizontal, gunakan `HorizontalScrollView`. Berikut adalah contoh kode untuk ScrollView :
 
-```
+```xml
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"

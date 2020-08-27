@@ -14,7 +14,7 @@ Class dan Object merupakan konsep dasar dari OOP yang berkutat dengan entitas di
 ### Class
 Kelas secara singkat merupakan blueprint atau prototype untuk pembuatan object. Di dalam class, Anda harus mendeklarasikan atribut dan fungsi apa saja yang dibutuhkan oleh objek yang akan dibuat dari class itu nanti. Contoh pembuatan class :
 
-```
+```java
 // Contoh dalam Java
 public class Student {
 
@@ -33,7 +33,7 @@ public class Student {
 }
 ```
 
-```
+```kotlin
 // Contoh dalam Kotlin
 class Student {
 
@@ -61,7 +61,7 @@ Object merupakan unit dasar dalam OOP yang merepresentasikan entitas di dunia ny
 ![contoh object](img/oop3.png)
 
 Contoh dari penggunaan object :
-```
+```java
 // Contoh dalam bahasa Java
 public class Main {
     public static void main(String[] args) {
@@ -78,7 +78,7 @@ public class Main {
 }
 ```
 
-```
+```kotlin
 // Contoh dalam bahasa Kotlin
 fun main() {
     // Pembuatan object student dari class Student
@@ -97,7 +97,7 @@ fun main() {
 Constructor merupakan fungsi spesial yang digunakan untuk menginisialisasi suatu object. Constructor dipanggil saat sebuah object dibuat dari sebuah class. Constructor bisa dipakai untuk inisialisasi nilai awal dari atribut suatu object.
 
 Contoh :
-```
+```java
 // Contoh dalam bahasa Java
 class Student {
     String name;
@@ -114,7 +114,7 @@ public class Main {
 }
 ```
 
-```
+```kotlin
 //Contoh dalam bahasa Kotlin
 // Di Kotlin constructor ditulis disamping nama class
 class Student(val name: String) {
@@ -141,7 +141,7 @@ Berdasarkan tabel tersebut, agar bisa menerapkan encapsulation maka diperlukan a
 
 Contoh penerapan encapsulation :
 
-```
+```java
 // Contoh dalam Java
 public class Student2 {
     private int rollNo;
@@ -156,7 +156,7 @@ public class Student2 {
 }
 ```
 
-```
+```kotlin
 // Contoh dalam Kotlin
 class Student {
     var rollNo: Int = 0
@@ -181,7 +181,7 @@ Sedikit ilustrasi bagaimana Inheritance terjadi :
 ![inheritance](img/oop5.jpg)
 
 Contoh Inheritance dalam pemrograman :
-```
+```java
 // Contoh dalam Java
 class Student2 {
     String name;
@@ -208,7 +208,7 @@ class InternationalStudent extends Student2 {
 }
 ```
 
-```
+```kotlin
 // Contoh dalam bahasa Kotlin
 open class Student {
     lateinit var name: String
@@ -229,7 +229,7 @@ Plymorphism berarti memiliki banyak bentuk. Polymorphism memungkinkan kita untuk
 ### Overloading
 Overloading terjadi ketika ada beberapa fungsi dengan nama yang sama tetapi memiliki parameter yang berbeda. Overloading bisa dilakukan ke suatu fungsi dengan pembedaan dari jumlah argumen atau jenis argumen. Contoh dari overloading :
 
-```
+```java
 // Contoh dalam Java
 class Student2 {
     public void introduce(int rollNo) {
@@ -242,7 +242,7 @@ class Student2 {
 }
 ```
 
-```
+```kotlin
 // Contoh dalam Kotlin
 class Student {
     fun introduce(rollNo: int) {
@@ -258,7 +258,7 @@ class Student {
 ### Overriding
 Overriding terjadi jika suatu class turunan memiliki definisi berbeda untuk salah satu anggota dari Super Class nya. Contoh untuk overriding :
 
-```
+```java
 // Contoh dalam Java
 class Student2 {
     String name;
@@ -277,7 +277,7 @@ class InternationalStudent2 extends Student2 {
 }
 ```
 
-```
+```kotlin
 // Contoh dalam Kotlin
 open class Student {
     lateinit var name: String
@@ -311,7 +311,7 @@ Beberapa karakteristik dari Abstract Class :
 
 Contoh penggunaan abstract class:
 
-```
+```java
 // Contoh dalam Java
 abstract class Student2 {
     String name;
@@ -347,7 +347,7 @@ class InternationalStudent2 extends Student2 {
 }
 ```
 
-```
+```kotlin
 // Contoh dalam Kotlin
 abstract class Student {
     lateinit var name: String
@@ -374,7 +374,7 @@ Interface mirip seperti abstract class, yang membedakan adalah fungsi yang didek
 - Jika sebuah class mengimplementasi interface dan tidak menyediakan function body untuk semua fungsi yang dideklarasi di interface, maka class tersebut haruslah abstract class
 
 Contoh dari penggunaan interface :
-```
+```java
 // Contoh dalam Java
 interface Student2 {
     String name = null;
@@ -399,7 +399,7 @@ class InternationalStudent2 implements Student2 {
 }
 ```
 
-```
+```kotlin
 // Contoh dalam Kotlin
 interface Student {
     var name: String
