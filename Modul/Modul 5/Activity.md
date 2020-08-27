@@ -88,6 +88,8 @@ View yang digunakan kira-kira seperti ini
             android:id="@+id/change_button"/>
 
     </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
 Lalu ini adalah contoh dari main activity :
@@ -148,7 +150,47 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 ```kotlin
 // Contoh dalam Kotlin
+package com.example.examplekotlin
 
+import kotlinx.android.synthetic.main.activity_main.*
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import kotlin.properties.Delegates
+
+class MainActivity : AppCompatActivity(), View.OnClickListener {
+    private val strings = arrayOf("Hi", "Hello")
+    private var string_state by Delegates.notNull<Int>()
+
+    companion object {
+        private const val STATE_STRING = "state_string"
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        if (savedInstanceState != null) {
+            string_state = savedInstanceState.getInt(STATE_STRING)
+        } else string_state = 0
+
+        text.setText(strings[string_state % 2])
+
+        change_button.setOnClickListener(this)
+    }
+
+    override fun onClick(p0: View?) {
+        if(p0?.id == R.id.change_button) {
+            string_state++
+            text.setText(strings[string_state % 2])
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(STATE_STRING, string_state)
+    }
+}
 ```
 
 ## Sumber :
