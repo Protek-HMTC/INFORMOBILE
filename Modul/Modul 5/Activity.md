@@ -96,8 +96,6 @@ Lalu ini adalah contoh dari main activity :
 
 ```java
 //Contoh dalam Java
-package com.example.myapplication;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -150,8 +148,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 ```kotlin
 // Contoh dalam Kotlin
-package com.example.examplekotlin
-
 import kotlinx.android.synthetic.main.activity_main.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -192,6 +188,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 }
 ```
+
+Jika kita tulis activity tersebut, maka ketika kita run akan menunjukkan layar seperti di gambar. Jika kita klik maka string yang terlihat akan berganti-ganti antara "Hi" dan "Hello". Lalu disitu kita juga menggunakan method `onSaveInstanceState` untuk membantu kita agar data tidak hilang ketika orientasi dari smartphone berubah. 
 
 ## Sumber :
 - https://developer.android.com/guide/components/activities
