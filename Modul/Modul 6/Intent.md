@@ -88,7 +88,7 @@ data class DataText (
 ) : Parcelable
 ```
 
-- Kita buat activity baru dengan nama DataActivity, lalu buat isi dari `activity_data.xml` seperti ini :
+- Kita buat activity baru dengan nama DataActivity dengan cara klik kanan di folder yang terdapat `MainActivity` > New > Activity > Empty Activity, lalu buat isi dari `activity_data.xml` seperti ini :
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
