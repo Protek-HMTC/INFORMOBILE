@@ -1,4 +1,4 @@
-### Peringantan, mulai dari modul ini penulisan modul akan menggunakan bahasa Kotlin
+### Peringantan, mulai dari modul ini penulisan modul akan menggunakan bahasa Kotlin. Anda bisa mempelajari bahasa Kotlin [di link ini](https://github.com/Protek-HMTC/INFORMOBILE/blob/master/Modul/Modul%20Extra/Programming%20With%20Kotlin/Programming%20With%20Kotlin.md)
 
 # Intent
 
