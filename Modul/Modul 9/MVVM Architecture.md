@@ -14,9 +14,12 @@ Penggunaan arsitektur `MVVM` sendiri cukup mudah. Kita akan melihat bagaimana pe
 1. Buat suatu class yang mewarisi kelas `ViewModel`
 ```kotlin
 class UserProfileViewModel : ViewModel() {
+    // Agar data bisa berubah dengan bebas dan mengabari ke activity/fragment ketika berubah
+    // Maka kita gunakan Tipe Data MutableLiveData
    private var user = MutableLiveData<User>()
 
    fun setUser(user_data: User) {
+       // Proses update data di class ViewModel yang dibuat
        user.postValue(user_data)
    }
 
