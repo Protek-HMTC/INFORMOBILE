@@ -20,7 +20,7 @@ Aturan dari penulisan `JSON` sudah tertulis di gambar yang tertera. Sebagai tamb
 
 ## Mengambil Data dari Web API dengan Retrofit
 
-Disini kita akan menggunakan Library `Retrofit` untuk mendapatkan data dari internet. Disini saya memberi sedikit contoh dengan menggunakan `Web API` dari Github untuk melihat user Github. Langkah-langkah nya adalah sebagai berikut :
+Disini kita akan menggunakan Library `Retrofit` untuk mendapatkan data dari internet. Disini saya memberi sedikit contoh dengan menggunakan `Web API` dari Github untuk melihat user Github. Anda bisa melihat dokumentasi dari `Web API` Github [disini](https://developer.github.com/v3/users/) Langkah-langkah nya adalah sebagai berikut :
 
 1. Tambahkan tag dibawah ini di file `AndroidManifest.xml` di luar dari tag application. Hal ini dilakukan agar aplikasi mendapat izin untuk connect ke internet
 ```<uses-permission android:name="android.permission.INTERNET" />```
@@ -76,8 +76,9 @@ object GithubService {
 
 6. Lalu kita tinggal gunakan object yang sudah dibuat tadi untuk mendapat data dari `Web API`
 ```kotlin
+val username = "kuuhaku86" 
 val request = GithubService.buildService(GithubEndpoints::class.java)
-val call = query?.let { request.getUsers(it) }
+val call = request.getUsers(username)
 val listItems = ArrayList<UserListItem>()
 
 call?.enqueue(object : retrofit2.Callback<ResultUserListItems> {
